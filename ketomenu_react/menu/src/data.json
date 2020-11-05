@@ -1,0 +1,43 @@
+[
+  {
+    "id": "1",
+    "ings": [
+      {
+        "id": "32",
+        "meal_id": "1",
+        "title": "Cheddar cheese"
+      },
+      {
+        "id": "33",
+        "meal_id": "1",
+        "title": "Bacon"
+      },
+      {
+        "id": "34",
+        "meal_id": "1",
+        "title": "Cauliflower"
+      }
+    ],
+    "title": "Casserole"
+  },
+  {
+    "id": "2",
+    "ings": [],
+    "title": "Curry"
+  },
+  {
+    "id": "3",
+    "ings": [],
+    "title": "Meatpie"
+  },
+  {
+    "id": "5",
+    "ings": [],
+    "title": "Tacos"
+  },
+  {
+    "id": "4",
+    "ings": [],
+    "title": "Tuna Crudo"
+  }
+]

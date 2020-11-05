@@ -1,0 +1,53 @@
+body {
+  background-color: #222;
+}
+
+/* use specificity to overcome React style */
+div.mealAccordion {
+  background-color: #777;
+  color: #fff;
+}
+
+.fabzone {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+}
+
+.ingredient-text {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+.ingredient-listitem {
+  display: flex;
+  flex-flow: row nowrap;
+  vertical-align: middle;
+}
+
+.menuDrawer {
+  height: 100vh;
+}
+
+.menu {
+  padding: 28px;
+  background-color: #777;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.menuItem {
+  margin-top: 14px;
+}
+
+.menuItem .ingredient-listitem button {
+  display: none;
+}
+
+button.deleteMealButton {
+  margin-top: 16px;
+  align-self: flex-end;
+}
+
+/*# sourceMappingURL=styles.css.map */
