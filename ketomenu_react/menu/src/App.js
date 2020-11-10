@@ -15,7 +15,8 @@ import {
 	DialogContent,
 	TextField,
 	Button,
-	Drawer
+	Drawer,
+	CircularProgress
 } from '@material-ui/core';
 
 async function getMealData(endpoint) {
@@ -38,6 +39,7 @@ function App() {
 	const [mealData, setMealData] = useState([])
 	const [menu, setMenu] = useState([])
 	const [menuOpen, setMenuOpen] = useState(false)
+	const [apploading, setAppLoading] = useState(true);
 	const [newMealDialogOpen, setNewMealDialogOpen] = useState(false);
 	const [mealName, setMealName] = useState('');
 	const handleAddNewMealDialog = e => setNewMealDialogOpen(prev => !prev);
@@ -45,6 +47,7 @@ function App() {
 
 	async function initMeals(deleteFunc){
 		const meals = await getMealData(API.meals);
+		setAppLoading(false);
 		setMealData(prev => {
 			return meals.map( ({id, title, ings}) => <Meal ings={ings} key={id} id={id} title={title} deleteMealFunc={deleteFunc} />);
 		});
@@ -59,11 +62,8 @@ function App() {
 	}
 
 	async function handleGenerateMenu(){
-		console.log("handleGenerateMenu called");
 		await generateMenu();
-		console.log("menu generated called");
 		setMenuOpen(true)
-		console.log("menu opened");
 	}
 
 	async function deleteMeal(id){
@@ -185,6 +185,13 @@ function App() {
 					<Button onClick={handleAddNewMealDialog} color="secondary">Cancel</Button>
 					<Button onClick={handleSubmitNewMeal} color="primary">Save</Button>
 				</DialogActions>
+			</Dialog>
+
+
+			<Dialog open={apploading}>
+				<DialogContent>
+					<CircularProgress />
+				</DialogContent>
 			</Dialog>
 
 			<div className="fabzone">
